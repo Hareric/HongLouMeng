@@ -9,26 +9,46 @@
 ## 配置说明
 
 config.py 中可设置搜索策略以及采样策略
-其中
+
+train参数
+
 •	init_scale：参数使用均匀分布进行初始化，该值为均匀分布的上下界
+
 •	learning_rate：学习率
+
 •	max_grad_norm：对梯度进行规范化（gradient clipping）
+
 •	num_layers：RNN的层级数目
+
 •	num_steps：RNN展开的步骤数（每次训练多少个字符）
+
 •	hidden_size：神经网络隐含层的维度
+
 •	iteration：模型总共迭代次数
+
 •	save_freq：每迭代多少次保存一次模型，同时进行一次生成
+
 •	keep_prob：dropout的概率
+
 •	batch_size：min-batch的大小
+
 •	model_path：模型保存路径
 
-以下是generate过程需要设置的参数
+
+generate参数
+
 •	save_time: 载入第save_time次保存的模型
+
 •	is_sample：是否采用sample策略，设置为False是采用max策略
+
 •	is_beams：是否采用beam-search进行解码，设置为False时不采用（相当于beam_size=1）
+
 •	beam_size：beam-search的窗口大小
-•	len_of_generation：期望生成文本的长度（包括多少个字）start_sentence：期望生成文本的开始部分（可以是一个句子，一个词，也可以仅仅只是一个字）
-控制台执行 python genarate.py 可以直接输出生成文本
+
+•	len_of_generation：期望生成文本的长度（包括多少个字）
+
+start_sentence：期望生成文本的开始部分（可以是一个句子，一个词，也可以仅仅只是一个字）
+
 
 ## 效果展示
 
